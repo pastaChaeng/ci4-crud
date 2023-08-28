@@ -6,27 +6,32 @@ use App\Controllers\BaseController;
 
 class StudController extends BaseController
 {
-    public function index($id)
+    public function index()
     {
-        return view('stud/list');
+        return view('studs/list');
     }
 
-    public function createStud($id)
+    public function createStuds()
     {
-        return view('stud/add');
+        return view('studs/add');
     }
 
-    public function storeStud($id)
+    public function storeStuds()
     {
    
     }
 
-    public function editStud($id)
+    public function editStuds($id)
     {
-        return view('stud/edit');
+        return view('studs/edit');
     }
 
-    public function deleteStud($id)
+    public function updateStuds($id)
+    {
+   
+    }
+
+    public function deleteStuds($id)
     {
       
     }
