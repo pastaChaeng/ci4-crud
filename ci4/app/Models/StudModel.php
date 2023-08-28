@@ -13,9 +13,8 @@ class StudModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        `stud_name`, `stud_id`, `stud_section`, `stud_course`, `stud_grade_lvl`, `stud_profile`
-    ];
+    protected $allowedFields    = [ `stud_name`, `stud_id`, `stud_section`, `stud_course`, `stud_grade_lvl`,
+     `stud_profile` ];
 
     // Dates
     protected $useTimestamps = false;
