@@ -9,12 +9,17 @@ class StudController extends BaseController
 {
     public function index()
     {
-        return view('studs/list');
+        $fetchStuds = new StudModel();
+        $data ['studs'] = $fetchStuds->findAll();
+
+        return view('studs/list', $data);
     }
 
     public function createStuds()
     {
-        return view('studs/add');
+       
+        $data['stud_id'] = '20-' .uniqid();
+        return view('studs/add', $data);
     }
 
     public function storeStuds()
@@ -22,7 +27,7 @@ class StudController extends BaseController
         $insertStud = new StudModel();
 
         if($img = $this->request->getFile('studprofile')){
-            if ($img->isValid() && !$img->hasMoved()){
+            if ($img->isValid() && ! $img->hasMoved()){
                 $imgName = $img->getRandomName();
                 $img->move('uploads/', $imgName);
             }
